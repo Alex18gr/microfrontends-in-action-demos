@@ -1,0 +1,44 @@
+<section class="customers">
+  <header class="customers__header">
+    <h2>Customers</h2>
+  </header>
+
+  <ng-container *ngIf="customers$ | async as data; else loading">
+    <div class="table-container" role="region" aria-label="Customers table" tabindex="0">
+      <table class="customers-table">
+        <thead>
+          <tr>
+            <th scope="col">Customer ID</th>
+            <th scope="col">Company</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Assigned Employee</th>
+            <th scope="col">Orders</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of data?.results">
+            <td>{{ c.customerId }}</td>
+            <td>{{ c.companyName }}</td>
+            <td>{{ c.name }} {{ c.surname }}</td>
+            <td>
+              <a class="link" [href]="'mailto:' + c.email">{{ c.email }}</a>
+            </td>
+            <td class="address">{{ c.address }}</td>
+            <td>{{ c.assignedEmployeeNumber }}</td>
+            <td>{{ c.orders?.length || 0 }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pager" *ngIf="data?.next">
+      <span>More customers available...</span>
+    </div>
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="loading">Loading customers...</div>
+  </ng-template>
+</section>

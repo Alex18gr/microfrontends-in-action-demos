@@ -1,0 +1,80 @@
+[
+  {
+    "fields": {
+      "customerId": "CUST-001",
+      "name": "Acme",
+      "surname": "Corporation",
+      "address": "100 Industrial Pkwy, Metropolis",
+      "email": "contact@acme.com",
+      "companyName": "Acme Corp",
+      "assignedEmployeeNumber": "E1001"
+    },
+    "model": "resources.customers",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "customerId": "CUST-002",
+      "name": "Wayne",
+      "surname": "Enterprises",
+      "address": "1 Wayne Tower, Gotham",
+      "email": "info@wayneenterprises.com",
+      "companyName": "Wayne Enterprises",
+      "assignedEmployeeNumber": "E1004"
+    },
+    "model": "resources.customers",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "customerId": "CUST-003",
+      "name": "Stark",
+      "surname": "Industries",
+      "address": "200 Malibu Point, Malibu",
+      "email": "sales@starkindustries.com",
+      "companyName": "Stark Industries",
+      "assignedEmployeeNumber": "E1002"
+    },
+    "model": "resources.customers",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "customerId": "CUST-004",
+      "name": "Daily",
+      "surname": "Planet",
+      "address": "355 Broadway, Metropolis",
+      "email": "publisher@dailyplanet.com",
+      "companyName": "Daily Planet",
+      "assignedEmployeeNumber": "E1005"
+    },
+    "model": "resources.customers",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "customerId": "CUST-005",
+      "name": "Oscorp",
+      "surname": "Industries",
+      "address": "500 Queens Blvd, New York",
+      "email": "hello@oscorp.com",
+      "companyName": "Oscorp",
+      "assignedEmployeeNumber": "E1003"
+    },
+    "model": "resources.customers",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "customerId": "CUST-006",
+      "name": "Wonka",
+      "surname": "Factory",
+      "address": "10 Chocolate Ln, London",
+      "email": "sweet@wonka.co",
+      "companyName": "Wonka Factory",
+      "assignedEmployeeNumber": "E1001"
+    },
+    "model": "resources.customers",
+    "pk": 6
+  }
+]

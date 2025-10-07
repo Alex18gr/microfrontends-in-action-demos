@@ -1,0 +1,55 @@
+<section style="margin-top: 24px;">
+  <h1 style="font-size: 2rem">Employees</h1>
+
+  <div *ngIf="loading">Loading employees...</div>
+  <div *ngIf="error" style="color: #b00020;">{{ error }}</div>
+
+  <!-- Filters -->
+  <div *ngIf="!loading && !error && employees && employees.length" style="margin: 12px 0; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+    <input type="text" [(ngModel)]="filterName" placeholder="Filter by name" class="filter-input" />
+    <input type="text" [(ngModel)]="filterSurname" placeholder="Filter by surname" class="filter-input" />
+    <input type="text" [(ngModel)]="filterEmail" placeholder="Filter by email" class="filter-input" />
+  </div>
+
+  <table *ngIf="!loading && !error && employees && employees.length" class="emp-table">
+    <thead>
+      <tr>
+        <th style="padding: 8px;">ID</th>
+        <th style="padding: 8px;">Employee #</th>
+        <th style="padding: 8px;">Name</th>
+        <th style="padding: 8px;">Surname</th>
+        <th style="padding: 8px;">Email</th>
+        <th style="padding: 8px;">Phone</th>
+        <th style="padding: 8px;">Address</th>
+        <th style="padding: 8px;">Birthday</th>
+        <th style="padding: 8px;">Level</th>
+        <th style="padding: 8px;">Customers</th>
+        <th style="padding: 8px;">Timesheets</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="clickable-row" *ngFor="let emp of filteredEmployees; trackBy: trackById" (click)="goToDetails(emp)">
+        <td style="padding: 8px;">{{ emp.id }}</td>
+        <td style="padding: 8px;">{{ emp.EmployeeNumber }}</td>
+        <td style="padding: 8px;">{{ emp.name }}</td>
+        <td style="padding: 8px;">{{ emp.surname }}</td>
+        <td style="padding: 8px;">{{ emp.email }}</td>
+        <td style="padding: 8px;">{{ emp.phone }}</td>
+        <td style="padding: 8px;">{{ emp.address }}</td>
+        <td style="padding: 8px;">{{ emp.birthday }}</td>
+        <td style="padding: 8px;">{{ emp.level }}</td>
+        <td style="padding: 8px;">{{ (emp.customers && emp.customers.length) ? emp.customers.length : 0 }}</td>
+        <td style="padding: 8px;">{{ (emp.timesheets && emp.timesheets.length) ? emp.timesheets.length : 0 }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- No match for filters -->
+  <div *ngIf="!loading && !error && employees && employees.length && filteredEmployees.length === 0">
+    No employees match the current filters.
+  </div>
+
+  <div *ngIf="!loading && !error && employees && employees.length === 0">
+    No employees found.
+  </div>
+</section>

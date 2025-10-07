@@ -1,0 +1,13 @@
+# Ensure consistent line endings across platforms
+* text=auto
+
+# Treat common binary file types as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.tgz binary

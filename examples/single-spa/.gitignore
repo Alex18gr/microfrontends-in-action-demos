@@ -1,0 +1,68 @@
+# Root ignores for a multi-project JavaScript/TypeScript repo (single-spa microfrontends)
+# This file is intended to cover all subprojects in this repository.
+
+# Package managers / installs
+node_modules/
+.pnpm-store/
+.pnp/
+.pnp.js
+
+# Build outputs (Webpack, Vite, Angular, etc.)
+dist/
+build/
+.tmp/
+.cache/
+
+# Vite
+.vite/
+**/node_modules/.vite/
+
+# Angular
+.angular/
+# Angular/General test coverage
+coverage/
+
+# Test runners
+.nyc_output/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.tgz
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# Storybook (if used later)
+.out/
+storybook-static/
+
+# Cypress (if used later)
+cypress/screenshots/
+cypress/videos/

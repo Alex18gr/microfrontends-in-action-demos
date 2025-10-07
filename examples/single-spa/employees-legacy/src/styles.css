@@ -1,0 +1,45 @@
+/* Global theme variables for employees-legacy */
+:root {
+  --el-surface: #ffffff;
+  --el-surface-muted: #f8fafc; /* light gray */
+  --el-border: #e5e7eb;       /* gray-200 */
+  --el-text: #111827;         /* gray-900 */
+  --el-muted-text: #6b7280;   /* gray-500 */
+  --el-input-bg: #ffffff;
+  --el-input-text: #111827;
+  --el-input-placeholder: #9ca3af;
+  --el-input-border: #d1d5db; /* gray-300 */
+  --el-row-hover: #f3f4f6;    /* gray-100 */
+  --el-error: #b00020;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --el-surface: #111827;        /* slate-800 */
+    --el-surface-muted: #1f2937;  /* gray-800 */
+    --el-border: #374151;         /* gray-700 */
+    --el-text: #e5e7eb;           /* gray-200 */
+    --el-muted-text: #9ca3af;     /* gray-400 */
+    --el-input-bg: #111827;       /* match surface */
+    --el-input-text: #e5e7eb;
+    --el-input-placeholder: #9ca3af;
+    --el-input-border: #4b5563;   /* gray-600 */
+    --el-row-hover: #0b1220;      /* slightly lighter than body */
+    --el-error: #f87171;          /* red-400 for dark */
+  }
+}
+
+/* Also support class/attribute driven dark themes from host app */
+.dark, [data-theme="dark"] {
+  --el-surface: #111827;
+  --el-surface-muted: #1f2937;
+  --el-border: #374151;
+  --el-text: #e5e7eb;
+  --el-muted-text: #9ca3af;
+  --el-input-bg: #111827;
+  --el-input-text: #e5e7eb;
+  --el-input-placeholder: #9ca3af;
+  --el-input-border: #4b5563;
+  --el-row-hover: #0b1220;
+  --el-error: #f87171;
+}

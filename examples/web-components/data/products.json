@@ -1,0 +1,92 @@
+[
+  {
+    "id": "p001",
+    "name": "Wireless Headphones",
+    "price": 99.99,
+    "image": "🎧",
+    "stock": 12,
+    "description": "Over-ear Bluetooth headphones with noise isolation and 30h battery life.",
+    "category": "Audio"
+  },
+  {
+    "id": "p002",
+    "name": "Mechanical Keyboard",
+    "price": 129.0,
+    "image": "⌨️",
+    "stock": 3,
+    "description": "Hot-swappable mechanical keyboard with RGB backlight and aluminum frame.",
+    "category": "Peripherals"
+  },
+  {
+    "id": "p003",
+    "name": "4K USB-C Monitor",
+    "price": 399.99,
+    "image": "🖥️",
+    "stock": 5,
+    "description": "27-inch 4K IPS display with 99% sRGB and power delivery over USB-C.",
+    "category": "Displays"
+  },
+  {
+    "id": "p004",
+    "name": "Portable SSD 1TB",
+    "price": 149.5,
+    "image": "💾",
+    "stock": 0,
+    "description": "High-speed NVMe portable SSD with hardware encryption.",
+    "category": "Storage"
+  },
+  {
+    "id": "p005",
+    "name": "Smart LED Light Strip",
+    "price": 39.99,
+    "image": "💡",
+    "stock": 18,
+    "description": "Addressable RGB light strip with Wi‑Fi control and music sync.",
+    "category": "Smart Home"
+  },
+  {
+    "id": "p006",
+    "name": "Ergonomic Mouse",
+    "price": 59.95,
+    "image": "🖱️",
+    "stock": 7,
+    "description": "Vertical ergonomic mouse with adjustable DPI and silent switches.",
+    "category": "Peripherals"
+  },
+  {
+    "id": "p007",
+    "name": "USB-C Hub (8-in-1)",
+    "price": 49.0,
+    "image": "🔌",
+    "stock": 2,
+    "description": "8-in-1 USB-C hub with HDMI, Ethernet, SD, and 100W PD passthrough.",
+    "category": "Accessories"
+  },
+  {
+    "id": "p008",
+    "name": "1080p Webcam",
+    "price": 69.0,
+    "image": "📷",
+    "stock": 10,
+    "description": "Full HD webcam with dual mics and low-light correction.",
+    "category": "Peripherals"
+  },
+  {
+    "id": "p009",
+    "name": "Gaming Chair",
+    "price": 229.99,
+    "image": "🪑",
+    "stock": 4,
+    "description": "Adjustable ergonomic chair with lumbar support and breathable fabric.",
+    "category": "Furniture"
+  },
+  {
+    "id": "p010",
+    "name": "Smart Speaker",
+    "price": 79.99,
+    "image": "🔊",
+    "stock": 0,
+    "description": "Voice assistant smart speaker with room-filling sound.",
+    "category": "Audio"
+  }
+]

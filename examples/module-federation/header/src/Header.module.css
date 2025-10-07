@@ -1,0 +1,76 @@
+/* CSS Module for Header component */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #1f2a49;
+  background: #0f172a;
+  color: #e6e9f0;
+}
+
+.brand {
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 16px;
+  padding: 0.2rem;
+}
+
+.navLink {
+  color: #cbd5e1;
+  text-decoration: none;
+  padding: 0.4rem 0;
+}
+
+.navLinkActive {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 0;
+  position: relative;
+}
+
+.navLinkActive::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  background-color: white;
+}
+
+.right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bellBtn {
+  background: transparent;
+  color: #e6e9f0;
+  border: 1px solid #24335c;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.name {
+  opacity: 0.9;
+}
+
+.logoutBtn {
+  background: #22335d;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+}

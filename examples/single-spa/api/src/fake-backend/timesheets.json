@@ -1,0 +1,17 @@
+[
+  { "fields": { "EmployeeNumber": "E1001", "weekDay": "Monday", "shift": 1 }, "model": "resources.timesheets", "pk": 1 },
+  { "fields": { "EmployeeNumber": "E1001", "weekDay": "Tuesday", "shift": 1 }, "model": "resources.timesheets", "pk": 2 },
+  { "fields": { "EmployeeNumber": "E1001", "weekDay": "Wednesday", "shift": 2 }, "model": "resources.timesheets", "pk": 3 },
+  { "fields": { "EmployeeNumber": "E1001", "weekDay": "Thursday", "shift": 2 }, "model": "resources.timesheets", "pk": 4 },
+  { "fields": { "EmployeeNumber": "E1001", "weekDay": "Friday", "shift": 1 }, "model": "resources.timesheets", "pk": 5 },
+
+  { "fields": { "EmployeeNumber": "E1002", "weekDay": "Monday", "shift": 2 }, "model": "resources.timesheets", "pk": 6 },
+  { "fields": { "EmployeeNumber": "E1002", "weekDay": "Tuesday", "shift": 2 }, "model": "resources.timesheets", "pk": 7 },
+  { "fields": { "EmployeeNumber": "E1002", "weekDay": "Wednesday", "shift": 1 }, "model": "resources.timesheets", "pk": 8 },
+  { "fields": { "EmployeeNumber": "E1002", "weekDay": "Thursday", "shift": 1 }, "model": "resources.timesheets", "pk": 9 },
+  { "fields": { "EmployeeNumber": "E1002", "weekDay": "Friday", "shift": 2 }, "model": "resources.timesheets", "pk": 10 },
+
+  { "fields": { "EmployeeNumber": "E1003", "weekDay": "Monday", "shift": 1 }, "model": "resources.timesheets", "pk": 11 },
+  { "fields": { "EmployeeNumber": "E1003", "weekDay": "Wednesday", "shift": 1 }, "model": "resources.timesheets", "pk": 12 },
+  { "fields": { "EmployeeNumber": "E1003", "weekDay": "Friday", "shift": 2 }, "model": "resources.timesheets", "pk": 13 }
+]

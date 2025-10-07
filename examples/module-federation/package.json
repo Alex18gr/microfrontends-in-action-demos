@@ -1,0 +1,40 @@
+{
+  "name": "module-federation-example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Orchestration package for the Module Federation microfrontends (host, header, catalog, details, cart-orders).",
+  "workspaces": [
+    "host",
+    "header",
+    "catalog",
+    "details",
+    "cart-orders"
+  ],
+  "scripts": {
+    "start": "echo \"Use dev:* or build:* scripts to manage the Module Federation apps.\"",
+
+    "install:host": "npm --prefix .\\host install",
+    "install:header": "npm --prefix .\\header install",
+    "install:catalog": "npm --prefix .\\catalog install",
+    "install:details": "npm --prefix .\\details install",
+    "install:cart-orders": "npm --prefix .\\cart-orders install",
+    "install:all": "npm run install:host && npm run install:header && npm run install:catalog && npm run install:details && npm run install:cart-orders",
+
+    "dev:host": "npm --prefix .\\host run dev",
+    "dev:header": "npm --prefix .\\header run dev",
+    "dev:catalog": "npm --prefix .\\catalog run dev",
+    "dev:details": "npm --prefix .\\details run dev",
+    "dev:cart-orders": "npm --prefix .\\cart-orders run dev",
+    "dev:all": "concurrently \"npm run dev:host\" \"npm run dev:header\" \"npm run dev:catalog\" \"npm run dev:details\" \"npm run dev:cart-orders\"",
+
+    "build:host": "npm --prefix .\\host run build",
+    "build:header": "npm --prefix .\\header run build",
+    "build:catalog": "npm --prefix .\\catalog run build",
+    "build:details": "npm --prefix .\\details run build",
+    "build:cart-orders": "npm --prefix .\\cart-orders run build",
+    "build:all": "npm run build:host && npm run build:header && npm run build:catalog && npm run build:details && npm run build:cart-orders"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

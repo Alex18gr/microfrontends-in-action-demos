@@ -1,0 +1,39 @@
+/* Employee list styles with dark-mode aware variables */
+:host { color: var(--el-text); }
+
+.filters { /* container keeps inline layout from template for now */ }
+.filter-input {
+  padding: 6px;
+  border: 1px solid var(--el-input-border);
+  border-radius: 4px;
+  background: var(--el-input-bg);
+  color: var(--el-input-text);
+}
+.filter-input::placeholder {
+  color: var(--el-input-placeholder);
+}
+
+.emp-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.emp-table thead th {
+  background: var(--el-surface-muted);
+  color: var(--el-text);
+  text-align: left;
+  border-bottom: 1px solid var(--el-border);
+  padding: 8px;
+}
+.emp-table tbody td {
+  padding: 8px;
+  border-bottom: 1px solid var(--el-border);
+}
+
+/* Click affordance */
+.clickable-row {
+  cursor: pointer;
+  transition: background 0.12s ease-in-out;
+}
+.clickable-row:hover {
+  background: var(--el-row-hover);
+}

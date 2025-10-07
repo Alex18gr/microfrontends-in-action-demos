@@ -1,0 +1,45 @@
+{
+  "name": "microfrontends-in-action-demos",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A collection of isolated microfrontend example projects (module federation, single-spa, web components) under examples/.",
+  "license": "MIT",
+  "author": "Alexandros Tsichouridis",
+  "engines": {
+    "node": ">=18"
+  },
+  "workspaces": [
+    "examples/module-federation",
+    "examples/module-federation/*"
+  ],
+  "scripts": {
+    "start": "echo \"This repository hosts multiple examples under examples/. Navigate into an example and run its scripts.\"",
+    "build": "echo \"Nothing to build at the root. Go into an example (e.g., examples/module-federation) and run its build script.\"",
+    "test": "echo \"No root tests. Each example should define its own tests.\"",
+    "lint": "echo \"No root linter configured. Lint per example.\"",
+
+    "mf:install:host": "npm --prefix .\\examples\\module-federation\\host install",
+    "mf:install:header": "npm --prefix .\\examples\\module-federation\\header install",
+    "mf:install:catalog": "npm --prefix .\\examples\\module-federation\\catalog install",
+    "mf:install:details": "npm --prefix .\\examples\\module-federation\\details install",
+    "mf:install:cart-orders": "npm --prefix .\\examples\\module-federation\\cart-orders install",
+    "mf:install:all": "npm run mf:install:host && npm run mf:install:header && npm run mf:install:catalog && npm run mf:install:details && npm run mf:install:cart-orders",
+
+    "mf:dev:host": "npm --prefix .\\examples\\module-federation\\host run dev",
+    "mf:dev:header": "npm --prefix .\\examples\\module-federation\\header run dev",
+    "mf:dev:catalog": "npm --prefix .\\examples\\module-federation\\catalog run dev",
+    "mf:dev:details": "npm --prefix .\\examples\\module-federation\\details run dev",
+    "mf:dev:cart-orders": "npm --prefix .\\examples\\module-federation\\cart-orders run dev",
+    "mf:dev:all": "concurrently \"npm run mf:dev:host\" \"npm run mf:dev:header\" \"npm run mf:dev:catalog\" \"npm run mf:dev:details\" \"npm run mf:dev:cart-orders\"",
+
+    "mf:build:host": "npm --prefix .\\examples\\module-federation\\host run build",
+    "mf:build:header": "npm --prefix .\\examples\\module-federation\\header run build",
+    "mf:build:catalog": "npm --prefix .\\examples\\module-federation\\catalog run build",
+    "mf:build:details": "npm --prefix .\\examples\\module-federation\\details run build",
+    "mf:build:cart-orders": "npm --prefix .\\examples\\module-federation\\cart-orders run build",
+    "mf:build:all": "npm run mf:build:host && npm run mf:build:header && npm run mf:build:catalog && npm run mf:build:details && npm run mf:build:cart-orders"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

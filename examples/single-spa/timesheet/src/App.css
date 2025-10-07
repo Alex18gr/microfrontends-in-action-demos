@@ -1,0 +1,36 @@
+:root {
+  --ts-surface: #ffffff;
+  --ts-surface-muted: #f8fafc;
+  --ts-border: #e5e7eb;
+  --ts-text: #111827;
+  --ts-muted-text: #6b7280;
+  --ts-chip-bg: #eef2ff;
+  --ts-chip-border: #c7d2fe;
+  --ts-chip-text: #3730a3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ts-surface: #111827; /* slate-800 */
+    --ts-surface-muted: #1f2937; /* gray-800 */
+    --ts-border: #374151; /* gray-700 */
+    --ts-text: #e5e7eb; /* gray-200 */
+    --ts-muted-text: #9ca3af; /* gray-400 */
+    --ts-chip-bg: #1e3a8a; /* blue-900 */
+    --ts-chip-border: #3b82f6; /* blue-500 */
+    --ts-chip-text: #dbeafe; /* blue-100 */
+  }
+}
+
+/* Also support class/attribute-driven dark themes from the host app */
+.dark,
+[data-theme="dark"] {
+  --ts-surface: #111827;
+  --ts-surface-muted: #1f2937;
+  --ts-border: #374151;
+  --ts-text: #e5e7eb;
+  --ts-muted-text: #9ca3af;
+  --ts-chip-bg: #1e3a8a;
+  --ts-chip-border: #3b82f6;
+  --ts-chip-text: #dbeafe;
+}

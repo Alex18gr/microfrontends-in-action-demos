@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E-commerce Microfrontends (Web Components)</title>
+  <link rel="stylesheet" href="./styles/global.css" />
+</head>
+<body>
+  <header class="header container" role="banner">
+    <div class="logo" aria-label="Brand">
+      <span class="mark">🛍️</span>
+      <span>E‑Shop</span>
+    </div>
+    <div style="flex:1; max-width:520px;">
+      <product-search></product-search>
+    </div>
+  </header>
+
+  <main class="main container" role="main">
+    <div class="grid">
+      <section aria-labelledby="products-title">
+        <h2 id="products-title" class="util-sr-only">Products</h2>
+        <div id="no-results" class="section util-center util-muted" style="display:none; min-height: 120px;">No products match your search.</div>
+        <div id="products" class="products"></div>
+      </section>
+      <aside aria-labelledby="cart-title">
+        <h2 id="cart-title" class="util-sr-only">Shopping Cart</h2>
+        <shopping-cart></shopping-cart>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div>Teams: Search (search-team) • Catalog (catalog-team) • Checkout (checkout-team) • Shared (shared)</div>
+    </div>
+  </footer>
+
+  <!-- Components (ES Modules) -->
+  <script type="module" src="./components/shared/event-bus.js"></script>
+  <script type="module" src="./components/search-team/product-search.js"></script>
+  <script type="module" src="./components/catalog-team/product-card.js"></script>
+  <script type="module" src="./components/checkout-team/shopping-cart.js"></script>
+
+  <!-- App bootstrap -->
+  <script type="module">
+    import { on, EventNames } from './components/shared/event-bus.js';
+
+    const productsEl = document.getElementById('products');
+    const emptyEl = document.getElementById('no-results');
+
+    /** Load products and render cards */
+    async function loadProducts() {
+      try {
+        const res = await fetch('./data/products.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error(`Failed to load products.json: ${res.status}`);
+        const products = await res.json();
+        renderProducts(products);
+      } catch (err) {
+        console.error(err);
+        if (emptyEl) emptyEl.textContent = 'Failed to load products.';
+        if (emptyEl) emptyEl.style.display = 'block';
+      }
+    }
+
+    function renderProducts(products) {
+      if (!productsEl) return;
+      productsEl.innerHTML = '';
+      for (const p of products) {
+        const card = document.createElement('product-card');
+        card.setAttribute('product-id', p.id);
+        card.setAttribute('name', p.name);
+        card.setAttribute('price', String(p.price));
+        card.setAttribute('image', p.image);
+        card.setAttribute('stock', String(p.stock));
+        card.setAttribute('description', p.description);
+        productsEl.appendChild(card);
+      }
+      checkNoResults();
+    }
+
+    function checkNoResults() {
+      if (!productsEl || !emptyEl) return;
+      const anyVisible = Array.from(productsEl.querySelectorAll('product-card'))
+        .some((el) => !el.shadowRoot?.querySelector('.card')?.classList.contains('hidden'));
+      emptyEl.style.display = anyVisible ? 'none' : 'block';
+    }
+
+    on(EventNames.PRODUCT_SEARCH, () => {
+      // Wait next frame to allow cards to update hidden class
+      requestAnimationFrame(checkNoResults);
+    });
+
+    loadProducts();
+  </script>
+</body>
+</html>

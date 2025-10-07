@@ -1,0 +1,72 @@
+[
+  {
+    "fields": {
+      "EmployeeNumber": "E1001",
+      "name": "John",
+      "surname": "Doe",
+      "address": "123 Maple St, Springfield",
+      "phone": "+1-555-0101",
+      "email": "john.doe@example.com",
+      "birthday": "1990-04-12",
+      "level": "senior"
+    },
+    "model": "resources.employees",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "EmployeeNumber": "E1002",
+      "name": "Jane",
+      "surname": "Smith",
+      "address": "456 Oak Ave, Metropolis",
+      "phone": "+1-555-0102",
+      "email": "jane.smith@example.com",
+      "birthday": "1992-11-03",
+      "level": "mid"
+    },
+    "model": "resources.employees",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "EmployeeNumber": "E1003",
+      "name": "Bob",
+      "surname": "Johnson",
+      "address": "789 Pine Rd, Gotham",
+      "phone": "+1-555-0103",
+      "email": "bob.johnson@example.com",
+      "birthday": "1995-07-21",
+      "level": "junior"
+    },
+    "model": "resources.employees",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "EmployeeNumber": "E1004",
+      "name": "Alice",
+      "surname": "Williams",
+      "address": "321 Birch Blvd, Star City",
+      "phone": "+1-555-0104",
+      "email": "alice.williams@example.com",
+      "birthday": "1985-02-18",
+      "level": "executive"
+    },
+    "model": "resources.employees",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "EmployeeNumber": "E1005",
+      "name": "Carlos",
+      "surname": "Garcia",
+      "address": "654 Cedar Ln, Central City",
+      "phone": "+1-555-0105",
+      "email": "carlos.garcia@example.com",
+      "birthday": "1988-09-09",
+      "level": "senior"
+    },
+    "model": "resources.employees",
+    "pk": 5
+  }
+]

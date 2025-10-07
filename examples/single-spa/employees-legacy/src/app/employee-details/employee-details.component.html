@@ -1,0 +1,21 @@
+<div class="details-container">
+  <button class="back-btn" (click)="goBack()">← Back to employees</button>
+
+  <div *ngIf="loading" class="loading">Loading employee details...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="!loading && !error && employee" class="card">
+    <h2>Employee {{ employee.name }} {{ employee.surname }}</h2>
+    <div class="meta">Code: <strong>{{ employee.EmployeeNumber }}</strong> • ID: {{ employee.id }}</div>
+
+    <div class="grid">
+      <div class="field"><span class="label">Email</span><span class="value">{{ employee.email }}</span></div>
+      <div class="field"><span class="label">Phone</span><span class="value">{{ employee.phone }}</span></div>
+      <div class="field full"><span class="label">Address</span><span class="value">{{ employee.address }}</span></div>
+      <div class="field"><span class="label">Birthday</span><span class="value">{{ employee.birthday }}</span></div>
+      <div class="field"><span class="label">Level</span><span class="value">{{ employee.level }}</span></div>
+      <div class="field"><span class="label">Customers</span><span class="value">{{ (employee.customers?.length || 0) }}</span></div>
+      <div class="field"><span class="label">Timesheets</span><span class="value">{{ (employee.timesheets?.length || 0) }}</span></div>
+    </div>
+  </div>
+</div>

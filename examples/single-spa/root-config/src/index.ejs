@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Microfrontends</title>
+    <meta name="importmap-type" use-injector/>
+    <script type="injector-importmap" src="https://react.microfrontends.app/importmap.json"></script>
+    <% if (isLocal) { %>
+        <script type="injector-importmap">
+            {
+              "imports": {
+                "rxjs": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs@6.6.3-fix.0/system/es2015/rxjs.min.js",
+                "rxjs/operators": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs@6.6.3-fix.0/system/es2015/rxjs-operators.min.js",
+                "@mf-single-spa-demo/root-config": "//localhost:9000/mf-single-spa-demo-root-config.js",
+                "@mf-single-spa-demo/navbar": "//localhost:9001/mf-single-spa-demo-navbar.js",
+                "@mf-single-spa-demo/timesheet": "//localhost:9002/spa.js",
+                "@mf-single-spa-demo/customers": "//localhost:4202/main.js",
+                "@mf-single-spa-demo/api": "//localhost:9005/mf-single-spa-demo-api.js"
+              }
+            }
+        </script>
+        <script rel="preload" src="/assets/system.min.js"></script>
+        <script type="systemjs-importmap">
+            {
+              "imports": {
+                "@mf-single-spa-demo/employees-legacy": "//localhost:4201/main.js"
+
+              }
+            }
+        </script>
+    <% } %>
+    <template id="single-spa-layout">
+        <single-spa-router>
+            <nav class="topnav">
+                <application name="@mf-single-spa-demo/navbar" loader="topNav" error="topNav"></application>
+            </nav>
+            <div class="main-content mt-16">
+                <redirect from="/" to="/employees"></redirect>
+            </div>
+        </single-spa-router>
+    </template>
+</head>
+<body>
+<script src="https://react.microfrontends.app/deps/npm:import-map-overrides@6.1.0/dist/import-map-overrides.js"></script>
+<script src="https://react.microfrontends.app/deps/npm:@single-spa/import-map-injector@3.0.0/lib/import-map-injector.js"></script>
+<script type="module">
+
+    window.importMapInjector.initPromise.then(() => {
+
+        import('@mf-single-spa-demo/root-config');
+        import('@react-mf/styleguide');
+    });
+</script>
+<import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+</body>
+</html>
